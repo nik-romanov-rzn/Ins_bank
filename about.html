@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>О нас | InsBank</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: #111;
+    }
+
+    /* HEADER */
+    .header {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #111;
+      font-size: 16px;
+    }
+
+    .header-btns {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-secondary {
+      padding: 8px 16px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .btn-primary {
+      padding: 8px 16px;
+      background: #a4fd5f;
+      border: none;
+      border-radius: 8px;
+    }
+
+    /* MAIN CONTENT */
+    .about-main {
+      padding: 80px 40px;
+    }
+
+    .about-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+
+    .about-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #000;
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+
+    .about-dot {
+      width: 8px;
+      height: 8px;
+      background: #a4fd5f;
+      border-radius: 50%;
+    }
+
+    .about-title {
+      font-size: 48px;
+      line-height: 1.2;
+      margin: 0 20px;
+      font-weight: 700;
+      color: #111;
+      text-align: left;
+      flex: 1;
+      margin-left: 11.5rem;
+    }
+
+    .about-counter {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .about-counter-text {
+      font-size: 16px;
+      color: #333;
+    }
+
+    .about-counter-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .about-counter-dot {
+      width: 40px;
+      height: 40px;
+      background: #ddd;
+      border-radius: 50%;
+    }
+
+    .about-text {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      text-align: left;
+    }
+
+    .about-cards {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      margin-top: 40px;
+    }
+
+    .about-card-black {
+      background: #1a1a1a;
+      padding: 24px;
+      border-radius: 16px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+            height: 7.8rem;
+
+    }
+
+    .about-stat-value .value-number {
+      font-size: 36px;
+      color: #a4fd5f;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .about-stat-value .value-desc {
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .about-stat-tags {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .about-tag-item {
+      background: transparent;
+      border: 1px solid #a4fd5f;
+      color: #a4fd5f;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      width: fit-content;
+    }
+
+    .about-service-card {
+      background: #1a1a1a;
+      padding: 24px;
+      border-radius: 16px;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      height: 7.8rem;
+    }
+
+    .about-service-info .service-num {
+      font-size: 14px;
+      color: #a4fd5f;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .about-service-info .service-title {
+      font-size: 20px;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    .about-service-image-placeholder {
+      width: 80px;
+      height: 80px;
+      background: #ddd;
+      border-radius: 8px;
+    }
+
+    .about-white-card {
+      background: #fff;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .about-white-card .white-card-num {
+      font-size: 14px;
+      color: #a4fd5f;
+      font-weight: 600;
+    }
+
+    .about-white-card .white-card-title {
+      font-size: 20px;
+      color: #111;
+      line-height: 1.4;
+    }
+
+    .about-white-card-link {
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      width: fit-content;
+    }
+
+    .about-white-card-link::after {
+      content: '→';
+      font-size: 16px;
+    }
+
+    /* === НАША КОМАНДА === */
+.about-team-section {
+  padding: 80px 40px;
+  background: #fff;
+}
+
+.team-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.team-left {
+  flex: 1;
+}
+
+.team-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+.team-text {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.team-members {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+}
+
+.team-member {
+  text-align: center;
+  max-width: 200px;
+}
+
+.member-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #ddd;
+  margin: 0 auto 16px;
+}
+
+.member-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.member-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+}
+
+.member-role {
+  font-size: 14px;
+  color: #777;
+}
+
+.team-quote {
+  flex: 0 0 400px;
+}
+
+.quote-box {
+  background: #fff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+.quote-text {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.quote-author {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111;
+  text-align: right;
+}
+
+    /* FOOTER */
+    .footer {
+      background-color: #fafafa;
+      padding: 60px 40px 30px;
+      border-top: 1px solid #eee;
+    }
+
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 60px;
+    }
+
+    .footer-logo {
+      font-size: 36px;
+      font-weight: 700;
+      color: #111;
+      margin-right: 60px;
+    }
+
+    .footer-columns {
+      display: flex;
+      gap: 60px;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-column h4 {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-column li a {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .footer-column li a:hover {
+      color: #a4fd5f;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .footer-contact,
+    .footer-social,
+    .footer-messaging {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-contact h4,
+    .footer-social h4,
+    .footer-messaging h4 {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .footer-contact p {
+      font-size: 14px;
+      color: #555;
+      margin: 0;
+    }
+
+    .social-icons,
+    .messaging-icons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-icon,
+    .messaging-icon {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #ddd;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .social-icon img,
+    .messaging-icon img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    .social-icon:hover,
+    .messaging-icon:hover {
+      background-color: #a4fd5f;
+      border-color: #a4fd5f;
+    }
+
+    .footer-copyright {
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+      margin-top: 30px;
+    }
+
+  /* === НАШ ПУТЬ === */
+.about-journey {
+  padding: 80px 40px;
+  background: #fff;
+}
+
+.about-journey-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.journey-timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.journey-timeline::before {
+  content: '';
+  position: absolute;
+  left: 100px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #ddd;
+}
+
+.journey-item {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.journey-year {
+  font-size: 28px;
+  margin-top: 4.5rem;
+  font-weight: 700;
+  color: #a4fd5f;
+  min-width: 100px;
+  text-align: right;
+  position: relative;
+}
+
+.journey-year::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+}
+
+.journey-content {
+  flex: 1;
+}
+
+.journey-content h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #111;
+  margin-top: 3rem;
+}
+
+.journey-content p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* === ЦЕННОСТИ === */
+.about-values {
+  padding: 80px 40px;
+  background: #000;
+}
+
+.about-values-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #f5f5f5;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.values-grid {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.value-card {
+  background: #fff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  text-align: left;
+  max-width: 208px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform 0.2s;
+}
+
+.value-card:hover {
+  transform: translateY(-4px);
+}
+
+.value-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid #eee;
+}
+
+.value-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.value-card p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* === ДОСТИЖЕНИЯ — ПОЛНЫЙ КРУГ === */
+.about-achievements {
+  padding: 80px 40px;
+  background: #fff;
+}
+
+.about-achievements-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.achievements-circle-layout {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-image {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.center-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.circle-item {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.circle-item .circle-content {
+  background: #f5f5f5;
+  padding: 20px;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.3s;
+}
+
+.circle-item:hover .circle-content {
+  transform: scale(1.05);
+  background: #a4fd5f;
+  color: #1a1a1a;
+}
+
+.circle-item:hover .circle-number {
+  color: #1a1a1a;
+}
+
+.circle-item:hover .circle-label {
+  color: #1a1a1a;
+}
+
+.circle-item .circle-number {
+  font-size: 24px;
+  font-weight: 700;
+  color: #a4fd5f;
+  margin-bottom: 8px;
+}
+
+.circle-item .circle-label {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.4;
+}
+/* === КАРТА ОФИСОВ === */
+.about-offices {
+  padding: 80px 40px;
+  background: #fafafa;
+  text-align: center;
+}
+.about-offices-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 40px;
+}
+.offices-map {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.map-image {
+  width: 100%;
+  border-radius: 16px;
+  height: 400px;
+  object-fit: cover;
+  background: #ddd;
+}
+.map-caption {
+  font-size: 16px;
+  color: #555;
+  margin-top: 16px;
+}
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">InsBank</div>
+    <nav class="nav">
+    <a href="index.html">Главная</a>
+    <a href="about.html">О нас</a>
+    <a href="service.html">Услуга</a>
+    <a href="product.html">Продукт</a>
+    <a href="contacts.html">Контакты</a>
+    </nav>
+    <div class="header-btns">
+      <button class="btn-secondary">Войти</button>
+      <button class="btn-primary">Регистрация</button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="about-main">
+    <div class="about-header">
+      <div class="about-tag">
+        <span class="about-dot"></span>
+        О нас
+        <span class="about-dot"></span>
+      </div>
+      <h1 class="about-title">
+        Финансы Без Ограничений,<br>
+        Только Возможности
+      </h1>
+      <div class="about-counter">
+        <div class="about-counter-text">/100 тыс.+ человек присоединились</div>
+        <div class="about-counter-dots">
+          <div class="about-counter-dot"></div>
+          <div class="about-counter-dot"></div>
+          <div class="about-counter-dot"></div>
+          <div class="about-counter-dot"></div>
+        </div>
+      </div>
+    </div>
+
+    <p class="about-text">
+      Предоставление каждому возможности справедливого и доступного банковского обслуживания. Неважно, кто ты, ты принадлежишь этому месту.
+    </p>
+
+    <!-- КАРТОЧКИ -->
+    <div class="about-cards">
+      <!-- КАРТОЧКА 1: СТАТИСТИКА -->
+      <div class="about-card-black">
+        <div class="about-stat-value">
+          <div class="value-number">99.9%</div>
+          <div class="value-desc">+0,5 с прошлой недели</div>
+        </div>
+        <div class="about-stat-tags">
+          <div class="about-tag-item">Умные деньги</div>
+          <div class="about-tag-item">Финансовая свобода</div>
+        </div>
+      </div>
+
+      <!-- КАРТОЧКА 2: УСЛУГА 01 -->
+      <div class="about-service-card">
+        <div class="about-service-info">
+          <div class="service-num">01/</div>
+          <div class="service-title">Мгновенный финансовый контроль</div>
+        </div>
+      </div>
+
+      <!-- КАРТОЧКА 3: УСЛУГА 02 -->
+      <div class="about-white-card">
+        <div class="white-card-num">02/</div>
+        <div class="white-card-title">Рост сбережений</div>
+      </div>
+    </div>
+  </main>
+
+ <!-- НАША КОМАНДА -->
+<section class="about-team-section">
+  <div class="team-container">
+    <!-- ЛЕВАЯ ЧАСТЬ -->
+    <div class="team-left">
+      <h2 class="team-title">Наша команда</h2>
+      <p class="team-text">
+        Мы — команда, которая верит, что финансы должны быть простыми, честными и доступными для каждого. Независимо от вашего возраста, дохода или опыта — вы заслуживаете лучшего банковского сервиса.
+      </p>
+
+      <div class="team-members">
+        <div class="team-member">
+          <div class="member-avatar"></div>
+          <div class="member-info">
+            <div class="member-name">Анна Петрова</div>
+            <div class="member-role">CEO & Co-founder</div>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="member-avatar"></div>
+          <div class="member-info">
+            <div class="member-name">Дмитрий Сидоров</div>
+            <div class="member-role">CTO</div>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="member-avatar"></div>
+          <div class="member-info">
+            <div class="member-name">Елена Иванова</div>
+            <div class="member-role">Head of Design</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ПРАВАЯ ЧАСТЬ — ЦИТАТА -->
+    <div class="team-quote">
+      <div class="quote-box">
+        <p class="quote-text">
+          «Мы создали InsBank, потому что устали от скрытых комиссий и сложных условий. Наша цель — сделать банкинг понятным и человечным.»
+        </p>
+        <div class="quote-author">
+          — Анна Петрова, CEO InsBank
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ЦЕННОСТИ -->
+<section class="about-values">
+  <h2 class="about-values-title">Наши ценности</h2>
+  <div class="values-grid">
+    <!-- ЦЕННОСТЬ 1 -->
+    <div class="value-card">
+      <img src="banking.jpg" alt="Инклюзия" class="value-image">
+      <h3>Инклюзия</h3>
+      <p>Банкинг для всех — независимо от возраста, дохода или страны проживания.</p>
+    </div>
+
+    <!-- ЦЕННОСТЬ 2 -->
+    <div class="value-card">
+      <img src="clear.webp" alt="Прозрачность" class="value-image">
+      <h3>Прозрачность</h3>
+      <p>Никаких скрытых комиссий, никаких подводных камней — только честные условия.</p>
+    </div>
+
+    <!-- ЦЕННОСТЬ 3 -->
+    <div class="value-card">
+      <img src="bank.webp" alt="Безопасность" class="value-image">
+      <h3>Безопасность</h3>
+      <p>Ваши данные защищены по стандарту PCI DSS и шифрованию AES-256.</p>
+    </div>
+
+    <!-- ЦЕННОСТЬ 4 -->
+    <div class="value-card">
+      <img src="rost.jpg" alt="Рост" class="value-image">
+      <h3>Рост</h3>
+      <p>Мы помогаем вам расти — через умные инструменты, аналитику и персональные рекомендации.</p>
+    </div>
+
+    <!-- ЦЕННОСТЬ 5 -->
+    <div class="value-card">
+      <img src="sup.webp" alt="Поддержка" class="value-image">
+      <h3>Поддержка</h3>
+      <p>Круглосуточная помощь — без ожидания, без роботов, без бюрократии.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ДОСТИЖЕНИЯ -->
+<section class="about-achievements">
+  <h2 class="about-achievements-title">Наши цифры</h2>
+  <div class="achievements-circle-layout">
+
+
+    <!-- КРУГИ ПО ПЕРИМЕТРУ (6 штук) -->
+    <div class="circle-item" style="transform: rotate(0deg) translateX(180px) rotate(0deg);">
+      <div class="circle-content">
+        <div class="circle-number">204,6k</div>
+        <div class="circle-label">Людей присоединилось</div>
+      </div>
+    </div>
+
+    <div class="circle-item" style="transform: rotate(60deg) translateX(180px) rotate(-60deg);">
+      <div class="circle-content">
+        <div class="circle-number">0,25%</div>
+        <div class="circle-label">Вероятность мошенничества</div>
+      </div>
+    </div>
+
+    <div class="circle-item" style="transform: rotate(120deg) translateX(180px) rotate(-120deg);">
+      <div class="circle-content">
+        <div class="circle-number">125k+</div>
+        <div class="circle-label">Активных пользователей</div>
+      </div>
+    </div>
+
+    <div class="circle-item" style="transform: rotate(180deg) translateX(180px) rotate(-180deg);">
+      <div class="circle-content">
+        <div class="circle-number">4.9★</div>
+        <div class="circle-label">App Store рейтинг</div>
+      </div>
+    </div>
+
+    <div class="circle-item" style="transform: rotate(240deg) translateX(180px) rotate(-240deg);">
+      <div class="circle-content">
+        <div class="circle-number">+0.5%</div>
+        <div class="circle-label">Недельный рост</div>
+      </div>
+    </div>
+
+    <div class="circle-item" style="transform: rotate(300deg) translateX(180px) rotate(-300deg);">
+      <div class="circle-content">
+        <div class="circle-number">99.9%</div>
+        <div class="circle-label">Удовлетворенность клиентов</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">InsBank</div>
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>Навигация</h4>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="service.html">Услуги</a></li>
+          <li><a href="product.html">Продукты</a></li>
+          <li><a href="about.html">О нас</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Поддержка</h4>
+        <ul>
+          <li><a href="404.html">Поддержка</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Вход</h4>
+        <ul>
+          <li><a href="login.html">Вход</a></li>
+          <li><a href="registr.html">Регистрация</a></li>
+          <li><a href="profile.html">Профиль</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-contact">
+        <h4>Телефон</h4>
+        <p>+7 (234) 567-89 10</p>
+        <p>+7 (234) 567-89 11</p>
+      </div>
+      <div class="footer-social">
+        <h4>Подписывайтесь на нас</h4>
+        <div class="social-icons">
+          <a href="404.html" class="social-icon"><img src="Vector-5.png" alt="Facebook"></a>
+          <a href="404.html" class="social-icon"><img src="Vector-6.png" alt="Google+"></a>
+          <a href="404.html" class="social-icon"><img src="Vector-7.png" alt="Instagram"></a>
+          <a href="404.html" class="social-icon"><img src="youtube.png" alt="YouTube"></a>
+        </div>
+      </div>
+      <div class="footer-messaging">
+        <h4>Напишите нам</h4>
+        <div class="messaging-icons">
+          <a href="404.html" class="messaging-icon"><img src="Vector-8.png" alt="Viber"></a>
+          <a href="404.html" class="messaging-icon"><img src="telegram.png" alt="Telegram"></a>
+          <a href="404.html" class="messaging-icon"><img src="whatsapp.png" alt="WhatsApp"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">© 2025</div>
+</footer>

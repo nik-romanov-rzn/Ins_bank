@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Продукты | InsBank</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: #111;
+    }
+
+    .header {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #111;
+      font-size: 16px;
+    }
+
+    .header-btns {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-secondary {
+      padding: 8px 16px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .btn-primary {
+      padding: 8px 16px;
+      background: #a4fd5f;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .products-main {
+      padding: 80px 40px;
+      background: #1a1a1a;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .products-title {
+      font-size: 48px;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 40px;
+      line-height: 1.2;
+    }
+
+    .products-subtitle {
+      font-size: 24px;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 60px;
+      opacity: 0.8;
+    }
+
+    .cards-image {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cards-image img {
+      max-width: 600px;
+      height: auto;
+      border-radius: 16px;
+    }
+    .services-cta {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .cta-button {
+      padding: 16px 48px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-button::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background-color: #a4fd5f;
+      transition: width 0.3s ease;
+    }
+
+    .cta-button:hover::after {
+      width: 100%;
+    }
+    .options-panel {
+      display: flex;
+      gap: 16px;
+      margin-top: 30px;
+      padding: 16px;
+      background: rgba(0,0,0,0.3);
+      border-radius: 20px;
+      border: 1px solid #a4fd5f;
+      width: 100%;
+      max-width: 800px;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      background: #000;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .option:hover,
+    .option.active {
+      background: #a4fd5f;
+      color: #1a1a1a;
+    }
+
+    .option .icon {
+      font-size: 20px;
+    }
+
+    .steps-section {
+      padding: 80px 40px;
+      background: url('steps-bg.png') no-repeat center center;
+      background-size: cover;
+      position: relative;
+      z-index: 1;
+    }
+
+    .steps-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    .step-card {
+      background: #fff;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .step-num {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      z-index: 2;
+    }
+
+    .step-title {
+      font-size: 24px;
+      color: #111;
+      line-height: 1.4;
+      font-weight: 600;
+    }
+
+    .step-text {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .step-icon {
+      width: 60px;
+      height: 60px;
+      background: #f0fdf4;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: #a4fd5f;
+      margin-bottom: 20px;
+    }
+
+    .step-btn {
+      padding: 10px 20px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step-btn::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background-color: #a4fd5f;
+      transition: width 0.3s ease;
+    }
+
+    .step-btn:hover::after {
+      width: 100%;
+    }
+
+    .footer {
+      background-color: #fafafa;
+      padding: 60px 40px 30px;
+      border-top: 1px solid #eee;
+    }
+
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 60px;
+    }
+
+    .footer-logo {
+      font-size: 36px;
+      font-weight: 700;
+      color: #111;
+      margin-right: 60px;
+    }
+
+    .footer-columns {
+      display: flex;
+      gap: 60px;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-column h4 {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-column li a {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .footer-column li a:hover {
+      color: #a4fd5f;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .footer-contact h4,
+    .footer-social h4,
+    .footer-messaging h4 {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .social-icons,
+    .messaging-icons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-icon,
+    .messaging-icon {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #ddd;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .social-icon img,
+    .messaging-icon img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    .social-icon:hover,
+    .messaging-icon:hover {
+      background-color: #a4fd5f;
+      border-color: #a4fd5f;
+    }
+
+    .footer-copyright {
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">InsBank</div>
+    <nav class="nav">
+    <a href="index.html">Главная</a>
+    <a href="about.html">О нас</a>
+    <a href="service.html">Услуга</a>
+    <a href="product.html">Продукт</a>
+    <a href="contacts.html">Контакты</a>
+    </nav>
+    <div class="header-btns">
+      <button class="btn-secondary">Войти</button>
+      <button class="btn-primary">Регистрация</button>
+    </div>
+  </header>
+
+  <main class="products-main">
+    <h1 class="products-title">Вот как мы заставляем<br>банковское дело работать на вас!</h1>
+    <p class="products-subtitle">Выберите продукт и начните пользоваться уже сегодня.</p>
+
+    <div class="cards-image">
+      <img src="cards.png" alt="Карты InsBank">
+    </div>
+
+    <div class="options-panel">
+      <div class="option active">
+        <img src="Vector.png" alt="Кошелек" class="option-icon">
+        <div class="text">Кредитная карта</div>
+      </div>
+      <div class="option">
+        <img src="Vector-2.png" alt="Карта" class="option-icon">
+        <div class="text">Дебетовая карта</div>
+      </div>
+      <div class="option">
+        <img src="Vector-3.png" alt="Магазин" class="option-icon">
+        <div class="text">Карта магазина</div>
+      </div>
+    </div>
+    <div class="services-cta">
+  <a href="****" class="cta-button">Выбрать карту</a>
+</div>  
+  </main>
+
+  <section class="steps-section">
+    <div class="steps-container">
+      <div class="step-card">
+        <div class="step-num">Шаг 01</div>
+        <div class="step-icon">📄</div>
+        <h3 class="step-title">Подайте заявку</h3>
+        <p class="step-text">
+          Заполните простую форму — всего 5 полей. Никаких скрытых вопросов, только ответы.
+        </p>
+        <button class="step-btn">Начать</button>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">Шаг 02</div>
+        <div class="step-icon">📱</div>
+        <h3 class="step-title">Активируйте карту</h3>
+        <p class="step-text">
+          Получите карту по почте или в пункте выдачи. Активируйте её в приложении за 1 минуту.
+        </p>
+        <button class="step-btn">Активировать</button>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">Шаг 03</div>
+        <div class="step-icon">💳</div>
+        <h3 class="step-title">Производите платежи</h3>
+        <p class="step-text">
+          Оплачивайте покупки, переводите деньги, накапливайте бонусы — всё в одном месте.
+        </p>
+        <button class="step-btn">Начать платить</button>
+      </div>
+    </div>
+  </section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">InsBank</div>
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>Навигация</h4>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="service.html">Услуги</a></li>
+          <li><a href="product.html">Продукты</a></li>
+          <li><a href="about.html">О нас</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Поддержка</h4>
+        <ul>
+          <li><a href="404.html">Поддержка</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Вход</h4>
+        <ul>
+          <li><a href="login.html">Вход</a></li>
+          <li><a href="404.html">Регистрация</a></li>
+          <li><a href="404.html">Профиль</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-contact">
+        <h4>Телефон</h4>
+        <p>+7 (234) 567-89 10</p>
+        <p>+7 (234) 567-89 11</p>
+      </div>
+      <div class="footer-social">
+        <h4>Подписывайтесь на нас</h4>
+        <div class="social-icons">
+          <a href="404.html" class="social-icon"><img src="Vector-5.png" alt="Facebook"></a>
+          <a href="404.html" class="social-icon"><img src="Vector-6.png" alt="Google+"></a>
+          <a href="404.html" class="social-icon"><img src="Vector-7.png" alt="Instagram"></a>
+          <a href="404.html" class="social-icon"><img src="youtube.png" alt="YouTube"></a>
+        </div>
+      </div>
+      <div class="footer-messaging">
+        <h4>Напишите нам</h4>
+        <div class="messaging-icons">
+          <a href="404.html" class="messaging-icon"><img src="Vector-8.png" alt="Viber"></a>
+          <a href="404.html" class="messaging-icon"><img src="telegram.png" alt="Telegram"></a>
+          <a href="404.html" class="messaging-icon"><img src="whatsapp.png" alt="WhatsApp"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">© 2025</div>
+</footer>
+
+</body>
+</html>

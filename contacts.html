@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Контакты | InsBank</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: #111;
+    }
+
+    .header {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #111;
+      font-size: 16px;
+    }
+
+    .header-btns {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-secondary {
+      padding: 8px 16px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .btn-primary {
+      padding: 8px 16px;
+      background: #a4fd5f;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .contacts-main {
+      padding: 80px 40px;
+    }
+
+    .contacts-title {
+      font-size: 48px;
+      font-weight: 700;
+      color: #111;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .contacts-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      gap: 60px;
+      align-items: flex-start;
+    }
+
+    .contact-form {
+      flex: 1;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 16px;
+      transition: border-color 0.2s;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: #a4fd5f;
+    }
+
+    textarea.form-control {
+      min-height: 160px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      padding: 14px 36px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .submit-btn::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background-color: #a4fd5f;
+      transition: width 0.3s ease;
+    }
+
+    .submit-btn:hover::after {
+      width: 100%;
+    }
+
+    .contact-info {
+      flex: 0 0 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .info-section h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #111;
+    }
+
+    .contact-details p {
+      font-size: 16px;
+      color: #555;
+      margin: 8px 0;
+    }
+
+    .social-icons,
+    .messaging-icons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-icon,
+    .messaging-icon {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #ddd;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #fff;
+      transition: all 0.2s;
+    }
+
+    .social-icon img,
+    .messaging-icon img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    .social-icon:hover,
+    .messaging-icon:hover {
+      background-color: #a4fd5f;
+      border-color: #a4fd5f;
+    }
+
+    .contact-map {
+      width: 100%;
+      height: 240px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #ddd;
+    }
+
+    .contact-map img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .footer {
+    background-color: #fafafa;
+    padding: 60px 40px 30px;
+    border-top: 1px solid #eee;
+    }
+
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 60px;
+    }
+
+    .footer-logo {
+      font-size: 36px;
+      font-weight: 700;
+      color: #111;
+      margin-right: 60px;
+    }
+
+    .footer-columns {
+      display: flex;
+      gap: 60px;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-column h4 {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-column li a {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .footer-column li a:hover {
+      color: #a4fd5f;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .footer-contact,
+    .footer-social,
+    .footer-messaging {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-contact h4,
+    .footer-social h4,
+    .footer-messaging h4 {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .footer-contact p {
+      font-size: 14px;
+      color: #555;
+      margin: 0;
+    }
+
+    .social-icons,
+    .messaging-icons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-icon,
+    .messaging-icon {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #ddd;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .social-icon img,
+    .messaging-icon img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    .social-icon:hover,
+    .messaging-icon:hover {
+      background-color: #a4fd5f;
+      border-color: #a4fd5f;
+    }
+
+    .footer-copyright {
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+      margin-top: 30px;
+    }
+
+.contact-map {
+  width: 100%;
+  height: 200px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 16px;
+  background: #eee;
+}
+
+.contact-map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.documents-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 12px;
+}
+
+.documents-list li {
+  margin-bottom: 10px;
+}
+
+.documents-list a {
+  color: #111;
+  text-decoration: underline;
+  font-size: 15px;
+  transition: color 0.2s;
+}
+
+.documents-list a:hover {
+  color: #a4fd5f;
+}
+
+form select.form-control {
+  appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+}
+.contacts-main {
+  padding: 80px 40px;
+  background: #fafafa;
+}
+
+.contacts-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #111;
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.contacts-title::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #a4fd5f;
+  border-radius: 2px;
+}
+
+.contacts-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.contact-form-wrapper {
+  flex: 1;
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 16px;
+  color: #fff;
+}
+
+.form-header h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.form-accent {
+  width: 40px;
+  height: 4px;
+  background: #a4fd5f;
+  border-radius: 2px;
+  margin-bottom: 24px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.form-control {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.form-control:focus {
+  outline: 2px solid #a4fd5f;
+}
+
+textarea.form-control {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.submit-btn {
+  padding: 14px 36px;
+  background: #a4fd5f;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-block;
+}
+
+.submit-btn:hover {
+  background: #8dfc3a;
+  transform: translateY(-2px);
+}
+
+.map-section {
+  margin-bottom: 40px;
+}
+
+.contact-map {
+  width: 100%;
+  height: 300px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+.contact-map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.map-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.8);
+  padding: 24px;
+  color: #fff;
+}
+
+.map-overlay h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.emails-section h3 {
+  font-size: 20px;
+  color: #111;
+  margin: 30px 0 20px;
+}
+
+.email-card {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.2s;
+}
+
+.email-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(164,253,95,0.2);
+}
+
+.email-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: contain;
+  background: #f0fdf4; 
+  padding: 8px;
+}
+
+.email-title {
+  font-weight: 600;
+  color: #111;
+  font-size: 16px;
+}
+
+.email-address {
+  font-size: 14px;
+  color: #555;
+}
+
+.documents-section h3 {
+  font-size: 20px;
+  color: #111;
+  margin: 30px 0 20px;
+}
+
+.documents-list {
+  list-style: none;
+  padding: 0;
+}
+
+.documents-list li {
+  margin-bottom: 12px;
+}
+
+.documents-list a {
+  color: #111;
+  text-decoration: underline;
+  font-size: 15px;
+  transition: color 0.2s;
+}
+
+.documents-list a:hover {
+  color: #a4fd5f;
+}
+</style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">InsBank</div>
+    <nav class="nav">
+    <a href="index.html">Главная</a>
+    <a href="about.html">О нас</a>
+    <a href="service.html">Услуга</a>
+    <a href="product.html">Продукт</a>
+    <a href="contacts.html">Контакты</a>
+    </nav>
+    <div class="header-btns">
+      <button class="btn-secondary">Войти</button>
+      <button class="btn-primary">Регистрация</button>
+    </div>
+  </header>
+
+<main class="contacts-main">
+  <h1 class="contacts-title">Контакты</h1>
+
+  <div class="contacts-container">
+    <div class="contact-form-wrapper">
+      <div class="form-header">
+        <h2>Напишите нам</h2>
+        <div class="form-accent"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Ваше имя</label>
+        <input type="text" id="name" class="form-control" placeholder="Введите ваше имя">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" class="form-control" placeholder="example@mail.com">
+      </div>
+
+      <div class="form-group">
+        <label for="department">Категория вопроса</label>
+        <select id="department" class="form-control">
+          <option>Техническая поддержка</option>
+          <option>Юридический отдел</option>
+          <option>Партнёрство</option>
+          <option>Общие вопросы</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Сообщение</label>
+        <textarea id="message" class="form-control" placeholder="Опишите ваш вопрос..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Отправить</button>
+    </div>
+
+    <div class="contact-info">
+      <div class="map-section">
+        <div class="contact-map">
+          <img src="office.png" alt="Офис InsBank">
+          <div class="map-overlay">
+            <h3>Офис InsBank</h3>
+            <p>г. Москва, ул. Тверская, д. 10</p>
+            <p>Пн–Пт: 9:00–20:00</p>
+          </div>
+        </div>
+      </div>
+
+<div class="emails-section">
+  <h3>Направьте запрос в нужный отдел</h3>
+  
+  <div class="email-card">
+    <img src="support.png" alt="Техподдержка" class="email-icon">
+    <div>
+      <div class="email-title">Техподдержка</div>
+      <div class="email-address">tech@insbank.com</div>
+    </div>
+  </div>
+  
+  <div class="email-card">
+    <img src="finans.png" alt="Юридический" class="email-icon">
+    <div>
+      <div class="email-title">Юридический</div>
+      <div class="email-address">legal@insbank.com</div>
+    </div>
+  </div>
+  
+  <div class="email-card">
+    <img src="partner.png" alt="Партнёры" class="email-icon">
+    <div>
+      <div class="email-title">Партнёры</div>
+      <div class="email-address">partners@insbank.com</div>
+    </div>
+  </div>
+</div>
+
+      <div class="documents-section">
+        <h3>Официальные документы</h3>
+        <ul class="documents-list">
+          <li><a href="/docs/license.pdf">Лицензия Банка России</a></li>
+          <li><a href="/docs/privacy.pdf">Политика конфиденциальности</a></li>
+          <li><a href="/docs/terms.pdf">Условия использования</a></li>
+          <li><a href="/docs/tariffs.pdf">Тарифы</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">InsBank</div>
+
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>Навигация</h4>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="service.html">Услуги</a></li>
+          <li><a href="product.html">Продукты</a></li>
+          <li><a href="about.html">О нас</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Поддержка</h4>
+        <ul>
+          <li><a href="404.html">Поддержка</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Вход</h4>
+        <ul>
+          <li><a href="login.html">Вход</a></li>
+          <li><a href="404.html">Регистрация</a></li>
+          <li><a href="404.html">Профиль</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-right">
+      <div class="footer-contact">
+        <h4>Телефон</h4>
+        <p>+7 (234) 567-89 10</p>
+        <p>+7 (234) 567-89 11</p>
+      </div>
+
+      <div class="footer-social">
+        <h4>Подписывайтесь на нас</h4>
+        <div class="social-icons">
+          <a href="404.html" class="social-icon"><img src="Vector-5.png" alt="Facebook"></a>
+          <a href="404.html" class="social-icon"><img src="Vector-6.png" alt="Google+"></a>
+          <a href="404.html" class="social-icon"><img src="Vector-7.png" alt="Instagram"></a>
+          <a href="404.html" class="social-icon"><img src="youtube.png" alt="YouTube"></a>
+        </div>
+      </div>
+
+      <div class="footer-messaging">
+        <h4>Напишите нам</h4>
+        <div class="messaging-icons">
+          <a href="404.html" class="messaging-icon"><img src="Vector-8.png" alt="Viber"></a>
+          <a href="404.html" class="messaging-icon"><img src="telegram.png" alt="Telegram"></a>
+          <a href="404.html" class="messaging-icon"><img src="whatsapp.png" alt="WhatsApp"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-copyright">
+    © 2025
+  </div>
+</footer>
+
+</body>
+</html>

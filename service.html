@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Услуги | InsBank</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+      background: #fff;
+      color: #111;
+    }
+
+    .header {
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .nav a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: #111;
+      font-size: 16px;
+    }
+
+    .header-btns {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn-secondary {
+      padding: 8px 16px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .btn-primary {
+      padding: 8px 16px;
+      background: #a4fd5f;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .services-main {
+      padding: 80px 40px;
+      background: #fafafa;
+    }
+
+    .services-title {
+      font-size: 48px;
+      font-weight: 700;
+      color: #111;
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    .services-title::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: #a4fd5f;
+      border-radius: 2px;
+    }
+
+    .services-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    .service-card {
+      background: #1a1a1a;
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .service-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .service-content {
+      padding: 32px;
+      color: #fff;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card h3 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .service-card p {
+      font-size: 16px;
+      color: #ccc;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    .service-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #a4fd5f;
+      color: #1a1a1a;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      width: fit-content;
+      transition: all 0.2s;
+    }
+
+    .service-btn:hover {
+      background: #8dfc3a;
+      transform: translateY(-2px);
+    }
+
+    .services-cta {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .cta-button {
+      padding: 16px 48px;
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-button::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 4px;
+      background-color: #a4fd5f;
+      transition: width 0.3s ease;
+    }
+
+    .cta-button:hover::after {
+      width: 100%;
+    }
+
+    .footer {
+      background-color: #fafafa;
+      padding: 60px 40px 30px;
+      border-top: 1px solid #eee;
+    }
+
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 60px;
+    }
+
+    .footer-logo {
+      font-size: 36px;
+      font-weight: 700;
+      color: #111;
+      margin-right: 60px;
+    }
+
+    .footer-columns {
+      display: flex;
+      gap: 60px;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-column h4 {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-column li a {
+      text-decoration: none;
+      color: #555;
+      font-size: 14px;
+    }
+
+    .footer-column li a:hover {
+      color: #a4fd5f;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .footer-contact h4,
+    .footer-social h4,
+    .footer-messaging h4 {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .social-icons,
+    .messaging-icons {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-icon,
+    .messaging-icon {
+      width: 40px;
+      height: 40px;
+      border: 1px solid #ddd;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .social-icon img,
+    .messaging-icon img {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    .social-icon:hover,
+    .messaging-icon:hover {
+      background-color: #a4fd5f;
+      border-color: #a4fd5f;
+    }
+
+    .footer-copyright {
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">InsBank</div>
+    <nav class="nav">
+    <a href="index.html">Главная</a>
+    <a href="about.html">О нас</a>
+    <a href="service.html">Услуга</a>
+    <a href="product.html">Продукт</a>
+    <a href="contacts.html">Контакты</a>
+    </nav>
+    <div class="header-btns">
+      <button class="btn-secondary">Войти</button>
+      <button class="btn-primary">Регистрация</button>
+    </div>
+  </header>
+
+  <main class="services-main">
+    <h1 class="services-title">Наши сервисы</h1>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="credit.webp" alt="Кредитная карта" class="service-image">
+        <div class="service-content">
+          <h3>Кредитная карта</h3>
+          <p>Повышенный лимит, кэшбэк до 5% и 0% на покупки в партнёрских магазинах.</p>
+          <a href="#" class="service-btn">Подробнее</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="debet.jpg" alt="Дебетовая карта" class="service-image">
+        <div class="service-content">
+          <h3>Дебетовая карта</h3>
+          <p>Без комиссий, с мгновенными переводами и умным бюджетом в приложении.</p>
+          <a href="#" class="service-btn">Подробнее</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="image 3.png" alt="Платёжное приложение" class="service-image">
+        <div class="service-content">
+          <h3>Платёжное приложение</h3>
+          <p>Оплачивайте покупки, переводите деньги и управляйте счетами в один клик.</p>
+          <a href="#" class="service-btn">Подробнее</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="office.png" alt="Карта магазина" class="service-image">
+        <div class="service-content">
+          <h3>Карта магазина</h3>
+          <p>Специальные предложения, бонусы и рассрочка до 24 месяцев в партнёрских сетях.</p>
+          <a href="#" class="service-btn">Подробнее</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="ai.jpg" alt="Умные сбережения" class="service-image">
+        <div class="service-content">
+          <h3>Умные сбережения</h3>
+          <p>Автоматическое накопление с ИИ-аналитикой и доходностью до 12% годовых.</p>
+          <a href="#" class="service-btn">Подробнее</a>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="analyz.jpg" alt="Финансовый контроль" class="service-image">
+        <div class="service-content">
+          <h3>Финансовый контроль</h3>
+          <p>Реальный анализ трат, прогноз бюджета и рекомендации по оптимизации.</p>
+          <a href="#" class="service-btn">Подробнее</a>
+        </div>
+      </div>
+    </div>
+
+<div class="services-cta">
+  <a href="product.html" class="cta-button">Выбрать карту</a>
+</div>
+  </main>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">InsBank</div>
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>Навигация</h4>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="service.html">Услуги</a></li>
+          <li><a href="product.html">Продукты</a></li>
+          <li><a href="about.html">О нас</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Поддержка</h4>
+        <ul>
+          <li><a href="404.html">Поддержка</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Вход</h4>
+        <ul>
+          <li><a href="login.html">Вход</a></li>
+          <li><a href="404.html">Регистрация</a></li>
+          <li><a href="404.html">Профиль</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-contact">
+        <h4>Телефон</h4>
+        <p>+7 (234) 567-89 10</p>
+        <p>+7 (234) 567-89 11</p>
+      </div>
+      <div class="footer-social">
+        <h4>Подписывайтесь на нас</h4>
+        <div class="social-icons">
+          <a href="404.html" class="social-icon"><img src="Vector-5.png" alt="Facebook"></a>
+          <a href="404.html" class="social-icon"><img src="Vector-6.png" alt="Google+"></a>
+          <a href="404.html" class="social-icon"><img src="Vector-7.png" alt="Instagram"></a>
+          <a href="404.html" class="social-icon"><img src="youtube.png" alt="YouTube"></a>
+        </div>
+      </div>
+      <div class="footer-messaging">
+        <h4>Напишите нам</h4>
+        <div class="messaging-icons">
+          <a href="404.html" class="messaging-icon"><img src="Vector-8.png" alt="Viber"></a>
+          <a href="404.html" class="messaging-icon"><img src="telegram.png" alt="Telegram"></a>
+          <a href="404.html" class="messaging-icon"><img src="whatsapp.png" alt="WhatsApp"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">© 2025</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>InsBank</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    body {
+      font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #fff;
+      color: #111;
+      overflow-x: hidden;
+    }
+
+    .header {
+      width: 100%;
+      max-width: 87.5rem;
+      margin: 0 auto;
+      padding: 1.5rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 1.625rem;
+      font-weight: 700;
+    }
+
+    .nav a {
+      margin: 0 1.25rem;
+      text-decoration: none;
+      color: #111;
+      font-size: 1rem;
+    }
+
+    .header-btns {
+      display: flex;
+      gap: 0.625rem;
+    }
+
+    .btn-secondary {
+      padding: 0.5rem 1rem;
+        text-decoration: none; 
+      background: #000;
+      color: #fff;
+      border: none;
+      border-radius: 0.5rem;
+    }
+
+    .btn-primary {
+        text-decoration: none; 
+      padding: 0.5rem 1rem;
+      background: #a4fd5f;
+      border: none;
+      border-radius: 0.5rem;
+    }
+
+.btn-secondary,
+.btn-primary {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  text-decoration: none; 
+  display: inline-block; 
+  text-align: center;
+  cursor: pointer;     
+  font-size: 1rem;
+  font-weight: normal;   
+}
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 6.25rem);
+      position: relative;
+      padding-top: 6.25rem;
+      z-index: 1;
+      overflow: visible;
+    }
+
+    .hero-bg-wrapper {
+      position: absolute;
+      top: -5rem;
+      left: 62.5rem;
+      width: 50%;
+      height: calc(100% + 5rem);
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .hero-bg-wrapper::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('fon.png') no-repeat center center;
+      background-size: cover;
+      filter: brightness(0.95);
+    }
+
+    .hero-left {
+      padding: 7.5rem 5rem;
+      background: #fff;
+      z-index: 2;
+    }
+
+    .title {
+      font-size: 5rem;
+      font-weight: 700;
+      line-height: 1.05;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+
+    .title::after {
+      content: "";
+      width: 17.5rem;
+      height: 0.5rem;
+      background: #a4fd5f;
+      position: absolute;
+      left: 0;
+      bottom: -1rem;
+      border-radius: 0.5rem;
+    }
+
+    .cta {
+      margin-top: 2.8125rem;
+      padding: 1rem 2.25rem;
+      background: #000;
+      color: #fff;
+      border-radius: 0.5rem;
+      font-size: 1.125rem;
+      border: none;
+    }
+
+    .people {
+      display: flex;
+      align-items: center;
+      margin-top: 3.75rem;
+      gap: 1.5rem;
+    }
+
+    .person img,
+    .person1 img {
+      border-radius: 1rem;
+      object-fit: cover;
+    }
+
+    .person img {
+      width: 9.375rem;
+      height: 9.375rem;
+    }
+
+    .person1 img {
+      width: 11.25rem;
+      height: 11.25rem;
+    }
+
+    .stat {
+      background-color: #000;
+      height: 5.5rem;
+      text-align: center;
+      border-radius: 0.9375rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 0.75rem;
+    }
+
+    .stat h3 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #a4fd5f;
+    }
+
+    .stat h4 {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .hero-right-full {
+      position: relative;
+      width: 100%;
+      height: 84%;
+      overflow: visible;
+      z-index: 2;
+    }
+
+    .cards {
+      position: relative;
+      width: 100%;
+      max-width: 26.25rem;
+      height: 16.25rem;
+      margin-bottom: 1.875rem;
+      right: -3.75rem;
+    }
+
+    .card-1,
+    .card-2,
+    .card-3 {
+      position: absolute;
+      width: 13.125rem;
+      border-radius: 1.25rem;
+    }
+
+    .card-1 {
+      transform: rotate(-6deg) translate(0rem, -5rem);
+      z-index: 3;
+      box-shadow: 0 1.25rem 2.1875rem rgba(0,0,0,0.4);
+    }
+
+    .card-2 {
+      transform: rotate(-20deg) translate(-6.25rem, -3.125rem);
+      z-index: 2;
+      filter: brightness(0.92);
+      box-shadow: 0 0.9375rem 1.5625rem rgba(0,0,0,0.35);
+    }
+
+    .card-3 {
+      transform: rotate(-30deg) translate(-11.875rem, -1.875rem);
+      z-index: 1;
+      filter: brightness(0.92);
+      box-shadow: 0 0.9375rem 1.5625rem rgba(0,0,0,0.35);
+    }
+
+    .hero-data {
+      position: absolute;
+      bottom: 3%;
+      right: 15%;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      gap: 2.25rem;
+      z-index: 3;
+    }
+
+    .hero-data p {
+      font-size: 1.375rem;
+      opacity: .65;
+    }
+
+    .hero-data h3 {
+      font-size: 1.75rem;
+      color: #a4fd5f;
+      font-weight: 700;
+    }
+
+    .divider {
+      width: 0.0625rem;
+      height: 2.5rem;
+      background: rgba(255,255,255,.3);
+    }
+
+    .scroll-btn {
+      position: absolute;
+      bottom: 3%;
+      right: 9%;
+      width: 3.5rem;
+      height: 3.5rem;
+      background: #fff;
+      border-radius: 15%;
+      font-size: 1.5rem;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+    }
+
+    .about-section {
+      padding: 5rem 2.5rem;
+      background: #fafafa;
+    }
+
+    .about-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.875rem;
+    }
+
+    .about-tag {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #000;
+      color: #fff;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1.25rem;
+      font-size: 0.875rem;
+    }
+
+    .dot {
+      width: 0.5rem;
+      height: 0.5rem;
+      background: #a4fd5f;
+      border-radius: 50%;
+    }
+
+    .about-title {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin: 0rem 8.125rem;
+      margin-top: 4rem;
+      font-weight: 10000;
+      color: #111;
+      text-align: left;
+      flex: 1;
+    }
+
+    .counter {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.625rem;
+      margin-top: 2rem;
+    }
+
+    .counter-text {
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .counter-dots {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .counter-dot {
+      width: 2.5rem;
+      height: 2.5rem;
+      background: #ddd;
+      border-radius: 50%;
+    }
+
+    .about-text {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+      max-width: 50rem;
+      margin: 0 14.375rem 2.5rem;
+      text-align: left;
+    }
+
+    .about-cards {
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+
+    .cards-left {
+      display: flex;
+      gap: 1.25rem;
+      flex: 1;
+    }
+
+    .stat-card,
+    .service-card {
+      background: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex: 1;
+    }
+
+    .stat-value .value-number {
+      font-size: 2.25rem;
+      color: #a4fd5f;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .stat-value .value-desc {
+      font-size: 0.875rem;
+      color: #ccc;
+    }
+
+    .stat-tags {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .tag {
+      background: transparent;
+      border: 0.0625rem solid #a4fd5f;
+      color: #a4fd5f;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1.25rem;
+      font-size: 0.75rem;
+      width: fit-content;
+    }
+
+    .service-info .service-num {
+      font-size: 0.875rem;
+      color: #a4fd5f;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .service-info .service-title {
+      font-size: 1.125rem;
+      color: #fff;
+      line-height: 1.4;
+    }
+
+    .card-right {
+      flex: 0 0 25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .white-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0.25rem 1.25rem rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .white-card .white-card-num {
+      font-size: 0.875rem;
+      color: #a4fd5f;
+      font-weight: 600;
+    }
+
+    .white-card .white-card-title {
+      font-size: 1.25rem;
+      color: #111;
+      line-height: 1.4;
+    }
+
+    .white-card .white-card-link {
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      width: fit-content;
+    }
+
+    .white-card .white-card-link::after {
+      content: '→';
+      font-size: 1rem;
+    }
+
+    .how-it-works-section {
+      position: relative;
+      padding: 5rem 2.5rem;
+      overflow: hidden;
+    }
+
+    .how-it-works-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .bg-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .how-it-works-content {
+      position: relative;
+      z-index: 2;
+      max-width: 87.5rem;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.5rem;
+    }
+
+    .how-it-works-header {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .title1 {
+      font-size: 3rem;
+      line-height: 1.2;
+      margin: 0;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+    }
+
+    .cards-img {
+      max-width: 37.5rem;
+      height: auto;
+      border-radius: 1rem;
+    }
+
+    .options-panel {
+      display: flex;
+      gap: 1rem;
+      margin-top: -3.4375rem;
+      padding: 1rem;
+      background: rgba(0,0,0,0.3);
+      border-radius: 1.25rem;
+      border: 0.0625rem solid #a4fd5f;
+      width: 100%;
+      max-width: 50rem;
+      justify-content: center;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: #000;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.875rem;
+      color: #fff;
+    }
+
+    .option:hover,
+    .option.active {
+      background: #a4fd5f;
+      color: #1a1a1a;
+    }
+
+    .option.active .option-icon {
+      filter: invert(1) brightness(0);
+    }
+
+    .steps {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3.75rem;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .step {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+      flex: 1;
+      min-width: 12.5rem;
+    }
+
+    .step-num {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1.25rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .step-title {
+      font-size: 1.5rem;
+      color: #fff;
+      line-height: 1.4;
+      font-weight: 600;
+    }
+
+    .step-arrow {
+      font-size: 1.5rem;
+      color: #a4fd5f;
+      align-self: flex-end;
+    }
+
+    .why-choose-us-section {
+      padding: 5rem 2.5rem;
+      background-color: #fafafa;
+    }
+
+    .why-choose-us-container {
+      max-width: 87.5rem;
+      margin: 0 auto;
+      display: flex;
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+
+    .why-choose-us-left {
+      flex: 1;
+    }
+
+    .why-choose-us-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: #000;
+      color: #fff;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1.25rem;
+      font-size: 0.875rem;
+      width: fit-content;
+      margin-bottom: 1.5rem;
+    }
+
+    .why-choose-us-heading {
+      font-size: 3rem;
+      line-height: 1;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 2.5rem;
+    }
+
+    .why-choose-us-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .why-choose-us-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 0.0625rem solid #eee;
+    }
+
+    .why-choose-us-item:last-child {
+      border-bottom: none;
+    }
+
+    .why-choose-us-num {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #111;
+      min-width: 2.5rem;
+    }
+
+    .why-choose-us-text {
+      font-size: 1.125rem;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .why-choose-us-placeholder {
+      flex: 0 0 18.75rem;
+      height: 26.25rem;
+      background-color: #ccc;
+      border-radius: 1rem;
+      overflow: hidden;
+      margin-top: 0.5rem;
+    }
+
+    .why-choose-us-placeholder-img {
+      width: 100%;
+      height: 130%;
+      object-fit: cover;
+    }
+
+    .why-choose-us-card {
+      flex: 0 0 15.625rem;
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 0.25rem 1.25rem rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .why-choose-us-card-image {
+      width: 7.5rem;
+      height: 13.125rem;
+      border-radius: 0.75rem;
+      object-fit: cover;
+      box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.1);
+    }
+
+    .why-choose-us-card-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .why-choose-us-card-button {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 0.5rem;
+      padding: 0.625rem 1.25rem;
+      font-size: 0.875rem;
+      cursor: pointer;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-choose-us-card-button::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 0.25rem;
+      background-color: #a4fd5f;
+      transition: width 0.3s ease;
+    }
+
+    .why-choose-us-card-button:hover::after {
+      width: 100%;
+    }
+
+    .testimonials-section {
+      padding: 5rem 2.5rem;
+      background-color: #fafafa;
+    }
+
+    .testimonials-title {
+      font-size: 3rem;
+      line-height: 1.2;
+      font-weight: 700;
+      color: #111;
+      text-align: center;
+      margin-bottom: 3.75rem;
+    }
+
+    .testimonials-grid {
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+    }
+
+    .testimonial-card {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0.25rem 1.25rem rgba(0,0,0,0.05);
+      width: 21.875rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      position: relative;
+    }
+
+    .testimonial-quote {
+      font-size: 3rem;
+      color: #ddd;
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      line-height: 1;
+      opacity: 0.6;
+      z-index: 1;
+    }
+
+    .testimonial-text {
+      font-size: 1rem;
+      color: #333;
+      line-height: 1.6;
+      margin-top: 1.25rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .testimonial-divider {
+      width: 100%;
+      height: 0.0625rem;
+      background-color: #eee;
+      margin: 1.25rem 0;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .author-avatar {
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: #ddd;
+      border-radius: 50%;
+    }
+
+    .author-name {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .author-role {
+      font-size: 0.875rem;
+      color: #777;
+    }
+
+    .footer {
+      background-color: #fafafa;
+      padding: 3.75rem 2.5rem 1.875rem;
+      border-top: 0.0625rem solid #eee;
+    }
+
+    .footer-container {
+      max-width: 87.5rem;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 3.75rem;
+    }
+
+    .footer-logo {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: #111;
+    }
+
+    .footer-columns {
+      display: flex;
+      gap: 3.75rem;
+    }
+
+    .footer-column {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-column h4 {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .footer-column li a {
+      text-decoration: none;
+      color: #555;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+    }
+
+    .footer-column li a:hover {
+      color: #a4fd5f;
+    }
+
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.875rem;
+    }
+
+    .footer-contact p {
+      font-size: 0.875rem;
+      color: #555;
+      margin: 0;
+    }
+
+    .social-icons,
+    .messaging-icons {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .social-icon,
+    .messaging-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      border: 0.0625rem solid #ddd;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      transition: all 0.2s;
+      background: #fff;
+    }
+
+    .social-icon img,
+    .messaging-icon img {
+      width: 1.25rem;
+      height: 1.25rem;
+      object-fit: contain;
+    }
+
+    .social-icon:hover,
+    .messaging-icon:hover {
+      background-color: #a4fd5f;
+      border-color: #a4fd5f;
+    }
+
+    .footer-copyright {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #777;
+      margin-top: 1.875rem;
+    }
+
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">InsBank</div>
+  <nav class="nav">
+    <a href="index.html">Главная</a>
+    <a href="about.html">О нас</a>
+    <a href="service.html">Услуга</a>
+    <a href="product.html">Продукт</a>
+    <a href="contacts.html">Контакты</a>
+  </nav>
+<div class="header-btns">
+  <a href="login.html" class="btn-secondary">Войти</a>
+  <a href="404.html" class="btn-primary">Регистрация</a>
+</div>
+</header>
+
+<section class="hero">
+  <div class="hero-bg-wrapper"></div>
+  <div class="hero-left">
+    <h1 class="title">Современный<br/>Банк<br>Для Всех.</h1>
+    <button class="cta">Давайте начнем</button>
+    <div class="people">
+      <div class="person"><img src="image.png" alt="Пользователь 1"></div>
+      <div class="person1"><img src="image-2.png" alt="Пользователь 2"></div>
+      <div class="stat"><h3>125k+</h3><h4>Доверенных пользователей</h4></div>
+    </div>
+  </div>
+  <div class="hero-right-full">
+    <div class="cards">
+      <img class="card card-1" src="Card Container-2.png" alt="Карта 1">
+      <img class="card card-2" src="Card Container-1.png" alt="Карта 2">
+      <img class="card card-3" src="Card Container.png" alt="Карта 3">
+    </div>
+    <div class="hero-data">
+      <div><p>Людей <br> присоединилось</p><h3>204,6k</h3></div>
+      <div class="divider"></div>
+      <div><p>Вероятность<br>мошенничества</p><h3>0,25%</h3></div>
+    </div>
+    <button class="scroll-btn">→</button>
+  </div>
+</section>
+
+<section class="about-section">
+  <div class="about-header">
+    <div class="about-tag"><span class="dot"></span>О нас<span class="dot"></span></div>
+    <h2 class="about-title">Финансы Без Ограничений,<br>Только Возможности</h2>
+    <div class="counter">
+      <div class="counter-text">/100 тыс.+ человек присоединились</div>
+      <div class="counter-dots">
+        <div class="counter-dot"></div>
+        <div class="counter-dot"></div>
+        <div class="counter-dot"></div>
+        <div class="counter-dot"></div>
+      </div>
+    </div>
+  </div>
+  <p class="about-text">Предоставление каждому возможности справедливого и доступного банковского обслуживания. Неважно, кто ты, ты принадлежишь этому месту.</p>
+  <div class="about-cards">
+    <div class="cards-left">
+      <div class="stat-card">
+        <div class="stat-value"><div class="value-number">99.9%</div><div class="value-desc">+0,5 с прошлой недели</div></div>
+        <div class="stat-tags"><div class="tag">Умные деньги</div><div class="tag">Финансовая свобода</div></div>
+      </div>
+      <div class="service-card">
+        <div class="service-info"><div class="service-num">01/</div><div class="service-title">Мгновенный финансовый контроль</div></div>
+      </div>
+    </div>
+    <div class="card-right">
+      <div class="white-card"><div class="white-card-num">02/</div><div class="white-card-title">Рост сбережений </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works-section">
+  <div class="how-it-works-bg"><img src="Subtract.png" alt="Фон секции Как это работает" class="bg-image"></div>
+  <div class="how-it-works-content">
+    <div class="how-it-works-header">
+      <div class="about-tag"><span class="dot"></span>Как это работает<span class="dot"></span></div>
+      <h2 class="title1">Вот как мы заставляем<br>банковское дело работать на вас!</h2>
+    </div>
+    <div class="cards-image"><img src="cards.png" alt="Карты" class="cards-img"></div>
+    <div class="options-panel">
+      <div class="option active"><img src="Vector.png" alt="Кошелек" class="option-icon"><div class="text">Кредитная карта</div></div>
+      <div class="option"><img src="Vector-2.png" alt="Карта" class="option-icon"><div class="text">Дебетовая карта</div></div>
+      <div class="option"><img src="Vector-3.png" alt="Магазин" class="option-icon"><div class="text">Карта магазина</div></div>
+      <div class="option"><img src="Vector-4.png" alt="Приложение" class="option-icon"><div class="text">Платежное приложение</div></div>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="step-num">Шаг 01</div><div class="step-title">Подайте заявку<br>на получение<br>дебетовой карты</div><div class="step-arrow">→</div></div>
+      <div class="step"><div class="step-num">Шаг 02</div><div class="step-title">Активируйте<br>свою карту</div><div class="step-arrow">→</div></div>
+      <div class="step"><div class="step-num">Шаг 03</div><div class="step-title">Производить<br>платежи</div><div class="step-arrow">→</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="why-choose-us-section">
+  <div class="why-choose-us-container">
+    <div class="why-choose-us-left">
+      <div class="why-choose-us-badge"><span class="why-choose-us-dot"></span>Почему выбирают нас<span class="why-choose-us-dot"></span></div>
+      <h2 class="why-choose-us-heading">Ваш идеальный партнер в области цифрового банкинга</h2>
+      <ul class="why-choose-us-list">
+        <li class="why-choose-us-item"><span class="why-choose-us-num">01.</span><span class="why-choose-us-text">Исключиво для всех</span></li>
+        <li class="why-choose-us-item"><span class="why-choose-us-num">02.</span><span class="why-choose-us-text">Простой и прозрачный</span></li>
+        <li class="why-choose-us-item"><span class="why-choose-us-num">03.</span><span class="why-choose-us-text">Безопасный и надежный</span></li>
+      </ul>
+    </div>
+    <div class="why-choose-us-placeholder"><img src="people1.jpg" alt="Плейсхолдер" class="why-choose-us-placeholder-img"></div> 
+    <div class="why-choose-us-card">
+      <img src="Card Container-2.png" alt="Карта" class="why-choose-us-card-image">
+      <div class="why-choose-us-card-content"><div class="why-choose-us-card-title">Полезный опыт</div><button class="why-choose-us-card-button">Подробнее</button></div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials-section">
+  <div class="testimonials-container">
+    <h2 class="testimonials-title">Что говорят наши клиенты</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-quote">“</div>
+        <div class="testimonial-text">«Я зарегистрировался за считанные минуты, и теперь я могу управлять всем со своего телефона. Никаких скрытых платежей, никакого стресса — просто чистое удобство!»</div>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-author">
+          <div class="author-avatar"></div>
+          <div class="author-info"><div class="author-name">Аулия Морган</div><div class="author-role">Офицер</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">“</div>
+        <div class="testimonial-text">«Мне, как новичку в цифровом банкинге, нравится простота и прозрачность услуг. Кроме того, вознаграждения — отличный бонус!»</div>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-author">
+          <div class="author-avatar"></div>
+          <div class="author-info"><div class="author-name">Дэниел К.</div><div class="author-role">Владелец малого бизнеса</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">“</div>
+        <div class="testimonial-text">«От быстрых денежных переводов до круглосуточной поддержки — в этом банке есть все, что мне нужно. Я чувствую себя в безопасности и все под контролем».</div>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-author">
+          <div class="author-avatar"></div>
+          <div class="author-info"><div class="author-name">Карлос Х</div><div class="author-role">Тревел-блогер</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">InsBank</div>
+    <div class="footer-columns">
+      <div class="footer-column">
+        <h4>Навигация</h4>
+        <ul>
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="service.html">Услуги</a></li>
+          <li><a href="product.html">Продукты</a></li>
+          <li><a href="about.html">О нас</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Поддержка</h4>
+        <ul>
+          <li><a href="404.html">Поддержка</a></li>
+          <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Вход</h4>
+        <ul>
+          <li><a href="login.html">Вход</a></li>
+          <li><a href="404.html">Регистрация</a></li>
+          <li><a href="404.html">Профиль</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-right">
+      <div class="footer-contact">
+        <h4>Телефон</h4>
+        <p>+7 (234) 567-89 10</p>
+        <p>+7 (234) 567-89 11</p>
+      </div>
+      <div class="footer-social">
+        <h4>Подписывайтесь на нас</h4>
+        <div class="social-icons">
+          <a href="404.html" class="social-icon"><img src="Vector-5.png" alt="Facebook"></a>
+          <a href="404.html" class="social-icon"><img src="Vector-6.png" alt="Google+"></a>
+          <a href="404.html" class="social-icon"><img src="Vector-7.png" alt="Instagram"></a>
+          <a href="404.html" class="social-icon"><img src="youtube.png" alt="YouTube"></a>
+        </div>
+      </div>
+      <div class="footer-messaging">
+        <h4>Напишите нам</h4>
+        <div class="messaging-icons">
+          <a href="404.html" class="messaging-icon"><img src="Vector-8.png" alt="Viber"></a>
+          <a href="404.html" class="messaging-icon"><img src="telegram.png" alt="Telegram"></a>
+          <a href="404.html" class="messaging-icon"><img src="whatsapp.png" alt="WhatsApp"></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-copyright">© 2025</div>
+</footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const options = document.querySelectorAll('.option');
+    
+    options.forEach(option => {
+      option.addEventListener('click', function () {
+        options.forEach(opt => opt.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  });
+</script>
+</body>
+</html>
